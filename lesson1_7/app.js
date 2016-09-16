@@ -1,15 +1,4 @@
-//  var upperCase = function (strValue) 
-//  {
-//     'use strict';
-//      return strValue.toUpperCase();
-//  //   var retStr = "";
-//  //   for( var i = 0 ; i < strValue.length; ++i)
-//  //   {
-//  //       retStr += strValue[i];
-//  //       
-//  //   }   
-
-//  }
+//!function(){"use strict";function n(n,o,e){this.arguments;n.name="dAnO",n.upper=function(){var e=o("uppercase");n.name=e(n.name)}}function o(n,o,e){return"foo"}var e=angular.module("DIApp",[]);e.controller("DIController",n),n.$inject=["$scope","$filter"],console.log(o()),console.log(o)}();
 
 
 (function()
@@ -17,6 +6,11 @@
     'use strict';
     var app = angular.module('DIApp',[]);
     app.controller( 'DIController',DIController);
+
+    //  
+    //  Defend again minification  errors...
+    //
+    DIController.$inject =  ['$scope','$filter'];
         
     function DIController($scope,$filter,$injector) 
     {
@@ -35,8 +29,5 @@
 
     console.log(bla());
     console.log(bla);
-    
 
 })(); 
-
-
