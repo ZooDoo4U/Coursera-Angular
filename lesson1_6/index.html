@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>body { font-size: 1.5em; }</style>
+    <title>HTML5 Custom Attributes</title>
+  </head>
+  <body ng-app='nameCalculator' >
+    <h1>HTML5 Custom Attributes</h1>
+    <div   id="target" ng-app="myTestApp">
+        <section>Section 1
+            <article>Article 1</article>
+        </section>
+    </div>
+  </body>
+  <script>
+//<!--    function selectTarget()
+//    {
+//        var target = document.getElementById("target");
+//        console.log(target);
+//        return target; 
+//    }
+
+//    (function() { 
+//        alert( selectTarget() );
+//    })()
+//-->
+    var app= document.querySelector("[ng-app='myTestApp']");
+    console.log(app);
+
+  </script>
+</html>
+
+
