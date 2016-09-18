@@ -38,7 +38,7 @@
             //  
             //  Sprint user input (textBox) into an array. 
             //
-            var items  = splitString($scope.textBox,',');  
+            var items  = splitAndFilterStrings($scope.textBox,',');  
 
             $scope.userMessage   = "";              //  Always clear previous message to avoid confusing UI state.
 
@@ -67,7 +67,7 @@
 
         $scope.DisplayMessage=function()
         {
-            var items  = splitString($scope.textBox,',');
+            var items  = splitAndFilterStrings($scope.textBox,',');
 
             if( items.length <1 )
             {
@@ -84,7 +84,8 @@
 
         };  //  end -- $scope.DisplayMessage=function()
 
-        function splitString(stringToSplit, separator)
+
+        function splitAndFilterStrings(stringToSplit, separator)
         {
             //
             //  Trim off trailing whitespace and commas.
@@ -101,10 +102,23 @@
                 return [];
             }
 
-            return arrayOfStrings;
+            var returnStrings = []; 
+            for(var i=0; i < arrayOfStrings.length; ++i) 
+            {
+                var tmpStr = arrayOfStrings[i].trim();
+                if( tmpStr.length > 0 )
+                {
+                    returnStrings.push(tmpStr); 
+                }
+            }
+
+            return returnStrings;
 
         }; // end -- splitString(stringToSplit, separator)
 
     }   //  end -- TxtBoxController($scope)
 
 })();   //   end -- IIFEE()
+
+
+
