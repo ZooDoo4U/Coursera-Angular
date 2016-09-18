@@ -1,0 +1,28 @@
+
+body, input, button
+{
+    color:rgba(10,6,229,1);
+    font-size: 1.5em; 
+}
+
+br {
+    font-size: .25em; 
+}    
+
+.redBorder
+{
+    -webkit-box-shadow: 1px 1px 9px 4px rgba(249,62,99,1) ;
+    box-shadow: 1px 1px 9px 4px rgba(255,2,19,1) ;
+}
+
+.greenBoarder
+{
+    -webkit-box-shadow: 1px 4px 10px 4px rgba(127,244,127,1) ;
+    box-shadow: 1px 4px 10px 4px rgba(127,244,127,1) ;
+}                     
+
+.normalBorder
+{
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
