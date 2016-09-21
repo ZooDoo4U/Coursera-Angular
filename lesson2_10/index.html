@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app='MsgApp'>                     
+  <head>
+    <meta charset='utf-8'>
+    <script src='angular.js'></script>
+    <script src='app.js'></script>
+    <style>body { font-size: 1.5em; }</style>
+    <title>Filtering functions...</title>
+  </head>
+  <body ng-controller='MsgController'>
+    <h1>Filters</h1>
+    <br/>
+    Original:  {{name}} {{ sayMessage(); }}
+        <br/>
+       Loves:  {{name}} {{ sayLovesMessage(); }}
+       <br/> 
+       Truth:  {{name}} {{ sayLovesMessage() | truth : 'healthy' : 'cookies' }}
+       <br/> 
+       BIG Truth:  {{name}} {{ sayLovesMessage() | truth : 'healthy' : 'cookies'| uppercase }}
+
+    <div>
+         <button ng-click="feedDano()">
+        Feed {{name}}
+        </button>
+        <br/>
+        Cost of cookie: {{ cookieCost | currency : 'danets  ' : 7 }}
+        <br/>
+        <img ng-src="images/yaakov_{{stateOfBeing}}.png">
+    </div>
+  </body>
+  <script>
+  </script>                    
+</html>
+
+
