@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app='ControlerAsApp'>                     
+  <head>
+    <meta charset='utf-8'>
+    <script src='angular.min.js'></script>
+    <script src='app.js'></script>
+    <style>body { font-size: 1.5em; }</style>
+    <title>Filtered Array Example</title>
+  </head>
+  <body >             
+    <h1>Controller as Syntax</h1>
+        <input type="text" ng-model="searchTerm" >
+<!--
+    <div ng-controller='ParentController as p'>
+        <div ng-controller='ChildController as c'>
+            {{p.parentValue}}
+        </div>
+    </div>
+
+-->
+
+    <div ng-controller='ParentController as p'>
+        Parent.ParentValue {{p.value}}<br/>
+        <div ng-controller='ChildController as c'>
+            Child.ParentValue {{c.value}}        
+            Parent.ParentValue {{p.value}}<br/>
+        </div>
+    </div>
+
+  </body>
+  <script>
+  </script>                    
+</html>
+
+
