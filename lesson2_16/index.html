@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app='ShoppingListApp'>                     
+  <head>
+    <meta charset='utf-8'>
+    <script src='angular.min.js'></script>
+    <script src='app.js'></script>
+    <style>body { font-size: 1.5em; }</style>
+    <title>Filtered Array Example</title>
+  </head>
+  <body >             
+    <h1>Controller as Syntax</h1>
+    <div ng-controller='ShoppingListAddController as itemAdder'>
+        <input type="text" ng-model="itemAdder.itemName" placeholder="Item Name">
+        <input type="text" ng-model="itemAdder.itemQuantity "  placeholder="Item Quantity">
+        <button ng-click="itemAdder.AddItem();">Add Item to shopping cart</button>
+    </div>                
+
+    <div ng-controller="ShoppingListShowController as showList">
+        <ol>
+            <li ng-repeat="item in showList.items">
+                {{ item.itemQuantity }} of {{ item.itemName }}
+                <button ng-click="showList.removeItem($index);">Remove</button>
+            </li>
+        </ol>                           
+
+  </body>
+  <script>
+  </script>                    
+</html>
+
+
