@@ -46,6 +46,10 @@
           <button ng-click="buy.itemBought(item.id);">Buy It...</button>
         </li>
       </ul>
+      <div ng-if="buy.buyItemList().length<=0">
+        No Items on check list, Add back from purshed list or add new.    
+      </div>
+
 <!--      </div> -->
     </div>
 

@@ -80,7 +80,7 @@
 //      should be called ToBuyController and the other called AlreadyBoughtController. You are
 //      required to have 2 controllers for this assignment.
 //
-// []   You will obviously need to share data between these controllers. Go back to app.js and
+// [x]   You will obviously need to share data between these controllers. Go back to app.js and
 //      implement this data sharing using the singleton approach with the .service declaration.
 //      Call the service ShoppingListCheckOffService. Make sure to inject this service into both
 //      controllers so they can share data. Also, realize that your service will have to keep
@@ -88,24 +88,24 @@
 //      way to accomplish this functionality, for this assignment, you are required to implement
 //      it as described.)
 //
-// []   (Hint) You can store 2 separate arrays in the service: one to hold "to buy" items and
+// [x]   (Hint) You can store 2 separate arrays in the service: one to hold "to buy" items and
 //      one to hold "bought" items. The reference to the "to buy" array should be
 //      placed/exposed onto the ToBuyController instance as some property. The reference
 //      to the "bought" items array should be placed/exposed onto the AlreadyBoughtController
 //      instance as some property.
 //
-// []   (Hint) When the user clicks on the "Bought" button, simply pass the call from your (ng-click)
+// [x]   (Hint) When the user clicks on the "Bought" button, simply pass the call from your (ng-click)
 //      controller-bound method to call the right method inside of your
 //      ShoppingListCheckOffService service, which removes that item from the "to buy" array
 //      and pushes it to the "bought" array.
 //
-// []   (Hint) Your ShoppingListCheckOffService would also be the place where you would store the initial array of "to buy" items.
+// [x]   (Hint) Your ShoppingListCheckOffService would also be the place where you would store the initial array of "to buy" items.
 //
-// []   To display and/or hide the messages when the list(s) are empty, use the ng-if directive.
+// [x]   To display and/or hide the messages when the list(s) are empty, use the ng-if directive.
 //
-// []   To loop over the items in either list use the ng-repeat directive.
+// [x]   To loop over the items in either list use the ng-repeat directive.
 //
-// []   Make sure all of your Javascript code is inside of an IIFE. (If you don't know what
+// [x]   Make sure all of your Javascript code is inside of an IIFE. (If you don't know what
 //      that is or why we'd want to use it, brush up on it by looking through module 4 of
 //      HTML, CSS, and Javascript for Web Developers course I teach.)
 //
@@ -113,7 +113,7 @@
 //
 // []   After you are done and satisfied with your solution, don't forget to
 //      add/commit/push your code to your repository.
-//
+
 
 (function()
 {
@@ -165,7 +165,8 @@
         {          
             ShoppingListService.itemPurchased(id);
         }
-
+        
+        // Seed list with some items to start.    
         ShoppingListService.addNewItemToBuy({id: 0, itemName: "Thai Food", itemQuantity: 1} );
         ShoppingListService.addNewItemToBuy({id: 0, itemName: "Pizza",     itemQuantity: 2} );
         ShoppingListService.addNewItemToBuy({id: 0, itemName: "Coffee",    itemQuantity: 3} );
@@ -240,15 +241,7 @@
                 }
             }
         };
-
-
-
-//        service.removeItem = function(index)
-//        {
-//            items.splice(index,1);
-//        };
-
     };
-
 })();
+
 
