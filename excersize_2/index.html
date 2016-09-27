@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" ng-app="ShoppingListCheckOffApp">
+  <head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: green;
+      }
+    </style>
+  </head>
+<body>
+  <div class="container">
+  <h1>Shopping List Check Off</h1>
+     <br/>
+
+    <div ng-controller="ToBuyController as buy">    
+    <h3>Add new item to check list</h3>
+        <input type="text" ng-model="buy.newItemName" placeholder="Item Name"/>
+        <input type="text" ng-model="buy.newItemQuantity" placeholder="Item Quantity"/>
+        <button ng-click="buy.addNewItemToBuy();">Add Item to list..</button>
+
+<!--   <div class="row"> -->
+
+<!-- To Buy List -->
+
+    <div >
+<!--      <div class="col-md-6> -->
+       <h2>To Buy:</h2>
+       <ul>                        
+        <li ng-repeat="item in buy.buyItemList()">
+          Buy {{item.itemQuantity}} of {{item.itemName}}
+          <button ng-click="buy.itemBought(item.id);">Buy It...</button>
+        </li>
+      </ul>
+<!--      </div> -->
+    </div>
+
+    <div ng-controller="AlreadyBoughtController as got">
+       <h2>Already purchased:</h2>
+       <ul>                        
+        <li ng-repeat="item in got.boughtList()">
+          Buy {{item.itemQuantity}} of {{item.itemName}}
+          <button ng-click="got.moveBackToBuy(item.id);">Back to Buy</button>
+        </li>
+      </ul>
+    </div>                            
+
+
+
+
+    </body>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</html>
